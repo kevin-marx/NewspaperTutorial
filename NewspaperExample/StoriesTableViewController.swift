@@ -9,15 +9,6 @@ struct Headline {
 
 }
 
-class HeadlineTableView: UITableViewCell{
-    
-    @IBOutlet weak var ImageView: UIImageView!
-    @IBOutlet weak var TopLabel: UILabel!
-    @IBOutlet weak var BottomLabel: UILabel!
-    
-    
-}
-
 class StoriesTableViewController: UITableViewController {
 
     var headlines = [
