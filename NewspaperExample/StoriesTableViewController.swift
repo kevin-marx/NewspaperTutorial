@@ -9,6 +9,13 @@ struct Headline {
 
 }
 
+class HeadlineTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var HeadlineLabel: UILabel!
+    @IBOutlet weak var TextLabel: UILabel!
+    @IBOutlet weak var ArticleImage: UIImageView!
+}
+
 class StoriesTableViewController: UITableViewController {
 
     var headlines = [
@@ -25,12 +32,13 @@ class StoriesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-
+            as! HeadlineTableViewCell
+        
         let headline = headlines[indexPath.row]
-        cell.textLabel?.text = headline.title
-        cell.detailTextLabel?.text = headline.text
-        cell.imageView?.image = UIImage(named: headline.image)
-
+        cell.HeadlineLabel?.text = headline.title
+        cell.TextLabel?.text = headline.text
+        cell.ArticleImage?.image = UIImage(named: headline.image)
+        
         return cell
     }
 
